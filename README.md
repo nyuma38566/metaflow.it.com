@@ -1,10 +1,10 @@
-# MetaFlow Trade Kit
+# aurumarkets
 
-MetaFlow Trade Kit is a compact trading resource repository focused on three practical areas:
+aurumarkets is a compact trading resource repository focused on three practical areas:
 
 - reference Expert Advisors for MetaTrader 4 and MetaTrader 5
 - broker evaluation notes for FX and CFD deployment
-- binary distribution through GitHub Releases instead of source control
+- desktop terminal distribution through GitHub Releases instead of source control
 
 ## Repository layout
 
@@ -16,10 +16,11 @@ MetaFlow Trade Kit is a compact trading resource repository focused on three pra
 
 ## Distribution model
 
-Client binaries such as `metatrade.exe` are intended to be published under GitHub Releases.
+Client binaries such as `aurumarkets.exe` are intended to be published under GitHub Releases.
 This keeps the repository smaller and makes versioned downloads easier to manage.
 
-- Release channel: `https://github.com/nyuma38566/metaflow.it.com/releases`
+- Release channel: `https://github.com/nyuma38566/aurumarkets/releases`
+- Desktop package name: `aurumarkets.exe`
 - Current checksum reference: `ebff20de90a5483980415df177832b151e89f40a87e3b186adac6b2edaf7a379`
 
 ## Included strategy samples
