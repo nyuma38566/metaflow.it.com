@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaFlow Trade Kit</title>
+  <meta name="description" content="MetaFlow Trade Kit 提供示例交易策略、经纪商筛选思路以及 MetaTrade 客户端下载入口。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">MetaFlow Trade Kit</p>
+      <h1>交易脚本、经纪商筛选说明与客户端下载</h1>
+      <p class="lead">
+        这个仓库提供一套可直接查看的示例资源：两份基础交易策略脚本、经纪商筛选维度，以及一个可下载的
+        MetaTrade 客户端安装包。
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="downloads/metatrade.exe" download>下载 MetaTrade.exe</a>
+        <a class="button secondary" href="#strategies">查看策略脚本</a>
+      </div>
+      <div class="hero-meta">
+        <span>文件大小：2.6 MB</span>
+        <span>SHA-256：<code>ebff20de90a5483980415df177832b151e89f40a87e3b186adac6b2edaf7a379</code></span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Broker Focus</p>
+          <h2>经纪商筛选维度</h2>
+        </div>
+        <div class="grid two-up">
+          <article class="card">
+            <h3>执行质量</h3>
+            <p>优先检查滑点、拒单率、成交速度，以及高波动时段的实际点差扩张情况。</p>
+          </article>
+          <article class="card">
+            <h3>账户结构</h3>
+            <p>区分 ECN、STP 和标准账户的手续费模型，确认隔夜利息、最小交易手数与杠杆限制。</p>
+          </article>
+          <article class="card">
+            <h3>交易品种</h3>
+            <p>确认主要货币对、黄金、指数或加密 CFD 的交易时段、合约大小和最小价格跳动。</p>
+          </article>
+          <article class="card">
+            <h3>风控条件</h3>
+            <p>检查强平比例、保证金计算方式、负余额保护和出入金处理时间。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="strategies">
+        <div class="section-heading">
+          <p class="eyebrow">Strategy Samples</p>
+          <h2>示例交易策略</h2>
+        </div>
+        <div class="grid two-up">
+          <article class="strategy-card">
+            <h3>EMA Cross ATR Filter</h3>
+            <p>适用平台：MetaTrader 5</p>
+            <p>逻辑：当快速 EMA 上穿或下穿慢速 EMA 时触发方向判断，并用 ATR 控制止损和止盈距离。</p>
+            <a href="strategies/EMA_Cross_ATR_Filter.mq5">打开脚本</a>
+          </article>
+          <article class="strategy-card">
+            <h3>RSI Session Reversion</h3>
+            <p>适用平台：MetaTrader 4</p>
+            <p>逻辑：在指定交易时段内，捕捉 RSI 从超买或超卖区间回归时的反转机会。</p>
+            <a href="strategies/RSI_Session_Reversion.mq4">打开脚本</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Deployment Notes</p>
+          <h2>使用建议</h2>
+        </div>
+        <ul class="note-list">
+          <li>所有脚本均为示例用途，先在模拟账户或历史回测环境验证。</li>
+          <li>上线前请结合目标经纪商的点差、最小止损距离和交易时段限制做参数调整。</li>
+          <li>如果要对外发布，建议为安装包补充版本号、来源说明和数字签名信息。</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
