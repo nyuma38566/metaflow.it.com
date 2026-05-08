@@ -1,30 +1,61 @@
 # MetaFlow Trade Kit
 
-一个轻量的静态资源仓库，包含：
+MetaFlow Trade Kit is a compact trading resource repository focused on three practical areas:
 
-- `MetaTrade` 客户端安装包下载入口
-- 两份示例交易策略脚本
-- 经纪商筛选和落地使用说明
+- reference Expert Advisors for MetaTrader 4 and MetaTrader 5
+- broker evaluation notes for FX and CFD deployment
+- binary distribution through GitHub Releases instead of source control
 
-## 文件结构
+## Repository layout
 
-- `index.html`：单页展示页
-- `styles.css`：页面样式
-- `downloads/metatrade.exe`：可下载客户端资源
-- `strategies/EMA_Cross_ATR_Filter.mq5`：EMA 趋势跟随示例
-- `strategies/RSI_Session_Reversion.mq4`：RSI 回归示例
+- `index.html`: project landing page
+- `styles.css`: presentation layer for the landing page
+- `strategies/EMA_Cross_ATR_Filter.mq5`: MT5 trend-following sample
+- `strategies/RSI_Session_Reversion.mq4`: MT4 mean-reversion sample
+- `strategies/London_Breakout_ATR_Manager.mq5`: MT5 session breakout sample
 
-## 下载资源
+## Distribution model
 
-- 文件：`downloads/metatrade.exe`
-- SHA-256：`ebff20de90a5483980415df177832b151e89f40a87e3b186adac6b2edaf7a379`
+Client binaries such as `metatrade.exe` are intended to be published under GitHub Releases.
+This keeps the repository smaller and makes versioned downloads easier to manage.
 
-## 使用说明
+- Release channel: `https://github.com/nyuma38566/metaflow.it.com/releases`
+- Current checksum reference: `ebff20de90a5483980415df177832b151e89f40a87e3b186adac6b2edaf7a379`
 
-1. 打开 `index.html` 可直接查看页面和下载入口。
-2. 将 `strategies/` 下的脚本导入 MetaTrader 编辑器后再进行参数调整。
-3. 上线真实账户前，先在模拟账户和历史回测环境验证。
+## Included strategy samples
 
-## 备注
+### EMA Cross ATR Filter
 
-仓库内的策略脚本仅作示例用途，不构成投资建议。不同经纪商的点差、最小止损距离、杠杆和成交模型会直接影响策略结果。
+An MT5 trend model built around EMA crossover confirmation with ATR-based stop and target placement.
+The script includes new-bar detection, spread control, and single-position handling.
+
+### RSI Session Reversion
+
+An MT4 reversal model that waits for RSI to move back inside normal bounds during a configured session.
+It is structured for simple intraday testing and parameter tuning.
+
+### London Breakout ATR Manager
+
+An MT5 breakout system that records the early London session range and trades directional breaks once
+the market moves outside the recorded high or low. Volatility is used to scale both protection and target levels.
+
+## Broker due diligence checklist
+
+Before deploying any strategy, review the following with the target broker:
+
+- average and event-driven spread behavior
+- commission schedule and swap policy
+- order fill quality and rejection rate
+- stop level restrictions and margin requirements
+- symbol trading hours and contract specifications
+
+## Usage guidance
+
+1. Open `index.html` locally or host it with GitHub Pages for a simple project landing page.
+2. Import the scripts under `strategies/` into MetaEditor and compile them inside the target platform version.
+3. Run backtests and forward tests before any production use.
+
+## Disclaimer
+
+The code in this repository is provided as a technical example only.
+It is not investment advice, performance guidance, or a guarantee of execution quality across brokers.

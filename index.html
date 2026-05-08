@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MetaFlow Trade Kit</title>
-  <meta name="description" content="MetaFlow Trade Kit 提供示例交易策略、经纪商筛选思路以及 MetaTrade 客户端下载入口。">
+  <meta name="description" content="MetaFlow Trade Kit is a compact trading resource hub with strategy samples, broker due diligence notes, and binary distribution through GitHub Releases.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page-shell">
     <header class="hero">
       <p class="eyebrow">MetaFlow Trade Kit</p>
-      <h1>交易脚本、经纪商筛选说明与客户端下载</h1>
+      <h1>Execution-ready strategy samples and broker evaluation notes.</h1>
       <p class="lead">
-        这个仓库提供一套可直接查看的示例资源：两份基础交易策略脚本、经纪商筛选维度，以及一个可下载的
-        MetaTrade 客户端安装包。
+        MetaFlow Trade Kit packages a small but professional set of resources for MetaTrader-oriented workflows:
+        strategy examples for MT4 and MT5, a broker due diligence framework, and binary distribution through GitHub Releases.
       </p>
       <div class="hero-actions">
-        <a class="button primary" href="downloads/metatrade.exe" download>下载 MetaTrade.exe</a>
-        <a class="button secondary" href="#strategies">查看策略脚本</a>
+        <a class="button primary" href="https://github.com/nyuma38566/metaflow.it.com/releases">Open Releases</a>
+        <a class="button secondary" href="#strategies">Browse Strategies</a>
       </div>
       <div class="hero-meta">
-        <span>文件大小：2.6 MB</span>
-        <span>SHA-256：<code>ebff20de90a5483980415df177832b151e89f40a87e3b186adac6b2edaf7a379</code></span>
+        <span>Distribution channel: GitHub Releases</span>
+        <span>Binary checksum: <code>ebff20de90a5483980415df177832b151e89f40a87e3b186adac6b2edaf7a379</code></span>
       </div>
     </header>
 
     <main>
       <section class="panel">
         <div class="section-heading">
-          <p class="eyebrow">Broker Focus</p>
-          <h2>经纪商筛选维度</h2>
+          <p class="eyebrow">Project Scope</p>
+          <h2>A compact resource base for retail FX and CFD operations</h2>
         </div>
         <div class="grid two-up">
           <article class="card">
-            <h3>执行质量</h3>
-            <p>优先检查滑点、拒单率、成交速度，以及高波动时段的实际点差扩张情况。</p>
+            <h3>Platform Delivery</h3>
+            <p>Executable binaries are intended to be distributed through the repository's Release channel rather than committed to source control.</p>
           </article>
           <article class="card">
-            <h3>账户结构</h3>
-            <p>区分 ECN、STP 和标准账户的手续费模型，确认隔夜利息、最小交易手数与杠杆限制。</p>
+            <h3>Strategy Library</h3>
+            <p>The repository includes reference Expert Advisors with clear parameters, session filters, spread filters, and basic position management logic.</p>
           </article>
           <article class="card">
-            <h3>交易品种</h3>
-            <p>确认主要货币对、黄金、指数或加密 CFD 的交易时段、合约大小和最小价格跳动。</p>
+            <h3>Broker Review Notes</h3>
+            <p>Execution quality, cost model, leverage constraints, and product coverage are framed as practical review dimensions for live deployment.</p>
           </article>
           <article class="card">
-            <h3>风控条件</h3>
-            <p>检查强平比例、保证金计算方式、负余额保护和出入金处理时间。</p>
+            <h3>Operational Use</h3>
+            <p>The material is structured for backtesting, sandbox deployment, parameter review, and internal handoff before any live rollout.</p>
           </article>
         </div>
       </section>
@@ -55,33 +55,64 @@
       <section class="panel" id="strategies">
         <div class="section-heading">
           <p class="eyebrow">Strategy Samples</p>
-          <h2>示例交易策略</h2>
+          <h2>Included trading systems</h2>
         </div>
         <div class="grid two-up">
           <article class="strategy-card">
             <h3>EMA Cross ATR Filter</h3>
-            <p>适用平台：MetaTrader 5</p>
-            <p>逻辑：当快速 EMA 上穿或下穿慢速 EMA 时触发方向判断，并用 ATR 控制止损和止盈距离。</p>
-            <a href="strategies/EMA_Cross_ATR_Filter.mq5">打开脚本</a>
+            <p>Platform: MetaTrader 5</p>
+            <p>Trend-following entry model using fast and slow EMA crossovers, ATR-based stop distance, and spread gating.</p>
+            <a href="strategies/EMA_Cross_ATR_Filter.mq5">View script</a>
           </article>
           <article class="strategy-card">
             <h3>RSI Session Reversion</h3>
-            <p>适用平台：MetaTrader 4</p>
-            <p>逻辑：在指定交易时段内，捕捉 RSI 从超买或超卖区间回归时的反转机会。</p>
-            <a href="strategies/RSI_Session_Reversion.mq4">打开脚本</a>
+            <p>Platform: MetaTrader 4</p>
+            <p>Mean-reversion model that waits for RSI to re-enter the normal range during a defined trading session.</p>
+            <a href="strategies/RSI_Session_Reversion.mq4">View script</a>
+          </article>
+          <article class="strategy-card">
+            <h3>London Breakout ATR Manager</h3>
+            <p>Platform: MetaTrader 5</p>
+            <p>Session breakout system that captures the London open range and sizes stop and target distances off current volatility.</p>
+            <a href="strategies/London_Breakout_ATR_Manager.mq5">View script</a>
           </article>
         </div>
       </section>
 
       <section class="panel">
         <div class="section-heading">
-          <p class="eyebrow">Deployment Notes</p>
-          <h2>使用建议</h2>
+          <p class="eyebrow">Broker Evaluation</p>
+          <h2>Review framework for execution venues</h2>
+        </div>
+        <div class="grid two-up">
+          <article class="card">
+            <h3>Execution quality</h3>
+            <p>Benchmark fill speed, slippage behavior, order rejection patterns, and spread expansion during macro events or session transitions.</p>
+          </article>
+          <article class="card">
+            <h3>Cost model</h3>
+            <p>Compare raw spread plus commission accounts against all-in spread accounts and document overnight financing on primary symbols.</p>
+          </article>
+          <article class="card">
+            <h3>Symbol coverage</h3>
+            <p>Confirm symbol mapping, contract size, tick value, margin formula, and trading hours for FX majors, metals, indices, or crypto CFDs.</p>
+          </article>
+          <article class="card">
+            <h3>Risk controls</h3>
+            <p>Review stop level restrictions, liquidation thresholds, negative balance protection, and deposit or withdrawal handling windows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Implementation Notes</p>
+          <h2>Recommended usage pattern</h2>
         </div>
         <ul class="note-list">
-          <li>所有脚本均为示例用途，先在模拟账户或历史回测环境验证。</li>
-          <li>上线前请结合目标经纪商的点差、最小止损距离和交易时段限制做参数调整。</li>
-          <li>如果要对外发布，建议为安装包补充版本号、来源说明和数字签名信息。</li>
+          <li>Validate every strategy in a historical test environment before attaching it to a live terminal.</li>
+          <li>Adjust spread thresholds, stop distances, and session windows to match the target broker's symbol specifications.</li>
+          <li>Publish installers and client binaries through GitHub Releases so versioning and checksum verification stay explicit.</li>
         </ul>
       </section>
     </main>
